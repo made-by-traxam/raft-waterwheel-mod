@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4964752f75c34ab84bb78b88d7e7fcf6, type: 3}
+  m_Name: Placeable_WaterWheel_Item
+  m_EditorClassIdentifier: 
+  uniqueName: Placeable_WaterWheel
+  uniqueIndex: 808
+  maxUses: 1
+  barGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  settings_cookable:
+    cookTime: 1
+    cookingResult:
+      item: {fileID: 0}
+      amount: 0
+    cookingSlotsRequired: 0
+  settings_consumeable:
+    foodType: 0
+    foodForm: 0
+    hungerYield: 0
+    bonusHungerYield: 0
+    thirstYield: 0
+    isRaw: 1
+    eventRef_consumeSound: 
+    itemAfterUse:
+      item: {fileID: 0}
+      amount: 0
+  settings_usable:
+    isUsable: 1
+    allowHoldButton: 0
+    useButtonName: LMB
+    useButtonCooldown: 0.2
+    animationOnSelect: 1
+    animationOnUse: 14
+    forceAnimationIndex: 0
+    setTriggering: 0
+    lockItemDuringCooldown: 0
+    resetTriggerOnDeselect: 
+    consumeUseAmount: 0
+    eventRef_break: 
+  settings_Inventory:
+    sprite: {fileID: 21300000, guid: e4afcd68db8550b4088c7f7fe85e318b, type: 3}
+    localizationTerm: Block/WaterWheel
+    displayName: Water Wheel
+    description: Automatically collects water and fills it into nearby purifiers.
+    stackSize: 5
+  settings_buildable:
+    blockPrefabs:
+    reselectOnBuild: 1
+    placeable: 1
+  settings_equipment:
+    slotType: 0
+  settings_recipe:
+    craftingCategory: 6
+    categoryOrder: 0
+    subCategory: 
+    subCatergoryOrder: 0
+    newCostToCraft:
+    - items:
+      - {fileID: 11400000, guid: 60e64a6093f4e9a843dba1f11f777cd1, type: 2}
+      amount: 12
+    - items:
+      - {fileID: 11400000, guid: 45c3f52faa28eebb4a464cfcfaa4c77a, type: 2}
+      amount: 2
+    - items:
+      - {fileID: 11400000, guid: 47f226f2fc93fd9847da8fff9259e928, type: 2}
+      amount: 6
+    - items:
+      - {fileID: 11400000, guid: 27eed72070ec699a42380bf371c11fa0, type: 2}
+      amount: 6
+    amountToCraft: 1
+    learned: 0
+    learnedFromBeginning: 1
+    blueprintItem: {fileID: 0}
