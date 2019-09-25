@@ -6,12 +6,12 @@ using UnityEngine;
 using Steamworks;
 
 [ModTitle("WaterWheel")]
-[ModDescription("Waterwheels automatically collect water and fill it into nearby Purifiers.\n\nPlease visit https://raft-mods.trax.am/mods/waterwheel for updates and support.")]
+[ModDescription("Waterwheels automatically collect water and fill it into nearby Purifiers.\n\nPlease visit https://raftmodding.com/mods/waterwheel for updates and support.")]
 [ModAuthor("traxam")]
 [ModIconUrl("https://traxam.s-ul.eu/ICvBJvOy.png")]
 [ModWallpaperUrl("https://traxam.s-ul.eu/gJaS13Dk.png")]
-[ModVersionCheckUrl("https://raft-mods.trax.am/api/v1/mods/waterwheel/version.txt")]
-[ModVersion("0.0.1")]
+[ModVersionCheckUrl("https://raftmodding.com/api/v1/mods/waterwheel/version.txt")]
+[ModVersion("0.0.2")]
 [RaftVersion("Update 9.05")]
 [ModIsPermanent(true)]
 public class WaterWheelMod : Mod
@@ -19,7 +19,6 @@ public class WaterWheelMod : Mod
     public IEnumerator Start()
     {
         RNotification notification = FindObjectOfType<RNotify>().AddNotification(RNotify.NotificationType.spinning, "Loading WaterWheel...");
-
         var bundleLoadRequest = AssetBundle.LoadFromFileAsync("mods\\ModData\\WaterWheel\\waterwheel.assets");
         yield return bundleLoadRequest;
 
@@ -32,12 +31,15 @@ public class WaterWheelMod : Mod
         }
 
         Item_Base placeable_testblock = assetBundle.LoadAsset<Item_Base>("Placeable_WaterWheel_Item");
+        Material colorMat = ItemManager.GetItemByName("Block_Wall_Fence_Plank").settings_buildable.GetBlockPrefab(0).GetComponentInChildren<Renderer>().material;
+        placeable_testblock.settings_buildable.GetBlockPrefab(0).GetComponentInChildren<Renderer>().material = colorMat;
+        placeable_testblock.settings_buildable.GetBlockPrefab(0).paintable = true;
         List<Item_Base> list = Traverse.Create(typeof(ItemManager)).Field("allAvailableItems").GetValue<List<Item_Base>>();
         list.Add(placeable_testblock);
         GameObject prefab = placeable_testblock.settings_buildable.GetBlockPrefab(0).gameObject;
         prefab.transform.Find("_waterTargetCollider").gameObject.AddComponent<WaterWheelTarget>();
+        prefab.transform.Find("_model").Find("wheel").gameObject.AddComponent<WaterWheelRotator>();
         Traverse.Create(typeof(ItemManager)).Field("allAvailableItems").SetValue(list);
-
         List<Item_Base> sobject = Traverse.Create(Resources.Load<ScriptableObject>("blockquadtype/quad_foundation_empty")).Field("acceptableBlockTypes").GetValue<List<Item_Base>>();
         sobject.Add(placeable_testblock);
         Traverse.Create(Resources.Load<ScriptableObject>("blockquadtype/quad_foundation_empty")).Field("acceptableBlockTypes").SetValue(sobject);
@@ -94,5 +96,11 @@ public class WaterWheelTarget : MonoBehaviour {
                 timer -= timePerFill;
             }
         }
+    }
+}
+
+public class WaterWheelRotator : MonoBehaviour {
+    public void Update() {
+        transform.Rotate(Vector3.right * Time.deltaTime * -15);
     }
 }

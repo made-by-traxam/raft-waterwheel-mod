@@ -82,6 +82,7 @@ MonoBehaviour:
     stackSize: 5
   settings_buildable:
     blockPrefabs:
+    - {fileID: 114978057437930241, guid: f39e878634eedc54695173f1c4126fd0, type: 3}
     reselectOnBuild: 1
     placeable: 1
   settings_equipment:
