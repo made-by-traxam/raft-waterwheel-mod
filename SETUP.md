@@ -7,7 +7,11 @@ If you want to add or modify the assets of this project, you need to set up a Un
 
 1. Clone or download the project mentioned above and open it with Unity 2018.3.7f1.
 2. Clone or download the WaterWheels repository and copy it to the Assets folder Unity project.
-3. The WaterWheel assets should now be visible and editable in the Unity editor. If the `Placeable_WaterWheel_Item` can not be opened you most likely have used the wrong Raft export.
+3. The WaterWheel assets should now be visible and editable in the Unity editor.
 
 ### Building an asset bundle
 All assets for this mod should have `waterwheel.assets` selected in the `Asset Labels` menu. Use [this script](https://gitlab.com/snippets/1871560) to generate the asset bundle. It can then be found in the `Assets/AssetBundles` directory in your Unity project.
+
+### Common issues
+- **`Placeable_WaterWheel_Item` can not be opened**: If the `Placeable_WaterWheel_Item` can not be opened you most likely have used the wrong Raft export.
+- **`NullReferenceException` in the Start block**: The `Placeable_WaterWheel_Item` settings might have lost the buildable block prefab. Drag the prefab in the empty array.
