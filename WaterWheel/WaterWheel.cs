@@ -24,7 +24,6 @@ namespace WaterWheel
             Item_Base waterWheelItem = assetBundle.LoadAsset<Item_Base>("Placeable_WaterWheel_Item");
             Material colorMat = ItemManager.GetItemByName("Block_Wall_Fence_Plank").settings_buildable.GetBlockPrefab(0).GetComponentInChildren<Renderer>().material;
             waterWheelItem.settings_buildable.GetBlockPrefab(0).GetComponentInChildren<Renderer>().material = colorMat;
-            waterWheelItem.settings_buildable.GetBlockPrefab(0).paintable = true;
 
             GameObject prefab = waterWheelItem.settings_buildable.GetBlockPrefab(0).gameObject;
             prefab.transform.Find("_waterTargetCollider").gameObject.AddComponent<WaterWheelTarget>();

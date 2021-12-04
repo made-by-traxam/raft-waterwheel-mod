@@ -2,11 +2,11 @@
   "name": "WaterWheel",
   "author": "traxam",
   "description": "Waterwheels automatically collect water and fill it into nearby Purifiers.\\n\\nPlease visit https://raftmodding.com/mods/waterwheel for updates and support.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "",
   "icon": "icon.png",
   "banner": "banner.png",
-  "gameVersion": "Update 11 (4677160)",
+  "gameVersion": "Update 13 (6905064)",
   "updateUrl": "https://www.raftmodding.com/api/v1/mods/waterwheel/version.txt",
   "isModPermanent": true,
   "excludedFiles": []
